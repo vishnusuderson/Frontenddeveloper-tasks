@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;0,400;0,500;1,200;1,300;1,400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: hsl(0, 0%, 98%);
+  --almostgray: hsl(0, 0%, 41%);
+  --black: hsl(0, 0%, 8%);
+}
+body {
+  width: 100%;
+  font-family: Epilogue;
+  min-height: 100vh;
+  font-size: 18px;
+  background: var(--white);
+}
+/* header */
+header,
+.nav-item {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  overflow-x: hidden;
+}
+.nav-item {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+
+  padding: 0px 20px;
+}
+.menu-item {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  gap: 3em;
+  flex-basis: 2;
+}
+
+.log {
+  margin-top: 15px;
+}
+.login-bar {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  gap: 20px;
+  justify-content: end;
+}
+header {
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+ul span {
+  content: url("./images/icon-arrow-down.svg");
+  visibility: hidden;
+}
+header button,
+a,
+li {
+  background: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  color: var(--almostgray);
+}
+header button {
+  font-size: 1em;
+}
+.reg,
+.loginm {
+  text-align: center;
+  padding: 8px;
+  border-radius: 15px;
+}
+.reg {
+  border: 2px solid var(--black);
+}
+.navcontrol {
+  display: none;
+}
+ol {
+  position: absolute;
+  height: auto;
+  text-align: center;
+  top: 50px;
+  padding: 1%;
+  background: white;
+  border-radius: 10%;
+  transform: scaleY(0);
+  transition: all ease-in 0.4s;
+}
+
+ol li {
+  line-height: 1.5em;
+  padding: 0px 0.5em;
+}
+/*  Main */
+main {
+  width: 100%;
+  height: 80vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+main .imge {
+  width: 40%;
+  height: 100%;
+  order: 2;
+  background: url("./images/image-hero-desktop.png");
+  background-size: 100% 100%;
+}
+main .content {
+  flex-shrink: 2;
+  width: 50%;
+  height: 100%;
+  padding: 11% 10px 0px 0px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+main .item {
+  padding-left: 5%;
+}
+main .title {
+  font-size: 1.5em;
+  font-weight: bolder;
+  display: flex;
+  flex-flow: column wrap;
+}
+main .about {
+  margin-top: 2em;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  padding-right: 20%;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+main .learn {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+main button {
+  height: 50px;
+  width: 150px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 1em;
+  border-radius: 20px;
+}
+main .parter {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+/* ||media queries|| */
+@media screen and (max-width: 768px) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* || main page || */
+  main {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+  }
+  content,
+  .imge {
+    width: 100%;
+    height: 100%;
+  }
+  main .content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+  }
+  main .imge {
+    width: 100%;
+    height: 100%;
+    order: 0;
+    background: url("./images/image-hero-mobile.png");
+    background-size: 100% 100%;
+  }
+  main .title {
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+    justify-content: center;
+    font-size: 1em;
+    gap: 10px;
+  }
+  main .about {
+    margin-right: auto;
+    margin-bottom: 2em;
+    text-align: center;
+    padding-right: 10vw;
+  }
+  main .learn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+  main .parter {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  main .parter img {
+    width: 4em;
+    height: 1em;
+  }
+  /* || navbar || */
+  .navcontrol {
+    display: block;
+    position: absolute;
+    right: 0;
+    overflow-x: none;
+  }
+  .open,
+  .close {
+    position: absolute;
+    right: 0;
+    overflow-x: hidden;
+  }
+  .close {
+    top: 1em;
+    right: 1em;
+    z-index: 1;
+    display: none;
+  }
+  .open {
+    right: 1em;
+  }
+  .nav-item::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-item {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 0%;
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    background: #f1f1f1f1;
+    transition: all ease-in-out 1s;
+    line-height: 1em;
+  }
+  .menu-item {
+    margin-top: 4em;
+  }
+  .nav-item li,
+  .nav-item ol,
+  .nav-item ul {
+    display: block;
+    position: relative;
+    text-align: center;
+    line-height: 2em;
+  }
+  .nav-item .menu-item li:nth-child(1) {
+    width: 100%;
+    height: 10%;
+    transition: all;
+  }
+  .nav-item .menu-item li:nth-child(2) {
+    width: 100%;
+    height: 10%;
+  }
+  ol {
+    position: absolute;
+    height: auto;
+    top: 0px;
+    text-align: center;
+    background: none;
+    border-radius: 10%;
+    transform: scaleY(0);
+    transition: all ease-in 0.4s;
+  }
+  .login-bar {
+    width: 100%;
+  }
+}
+/* ||media queries|| */
+@media screen and (max-width: 372px) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* || main page || */
+  main {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100vh;
+  }
+  content,
+  .imge {
+    width: 100%;
+    height: 100%;
+  }
+  main .content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+  }
+  main .imge {
+    order: 0;
+    background: url("./images/image-hero-mobile.png");
+    background-size: 100% 100%;
+  }
+  main .title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-flow: row;
+    font-size: 1em;
+    gap: 10px;
+  }
+  main .about {
+    margin-right: auto;
+    margin-bottom: 2em;
+    text-align: center;
+    padding-right: 10vw;
+  }
+  main .learn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+  main .parter img {
+    width: 2em;
+  }
+
+  /* || navbar || */
+  .navcontrol {
+    display: block;
+    position: absolute;
+    right: 0;
+    overflow-x: none;
+  }
+  .open {
+    position: absolute;
+    right: 0;
+    overflow-x: hidden;
+  }
+  .close {
+    position: relative;
+    top: 1em;
+    right: 1em;
+    z-index: 1;
+    display: none;
+  }
+  .open {
+    right: 1em;
+  }
+  .nav-item::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-item {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 0%;
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+    background: #f1f1f1f1;
+    transition: all ease-in-out 1s;
+    line-height: 1em;
+  }
+  .nav-item li,
+  .nav-item ol,
+  .nav-item ul {
+    display: block;
+    position: relative;
+    text-align: center;
+    line-height: 2em;
+  }
+  .nav-item .menu-item li:nth-child(1) {
+    width: 100%;
+    height: 10%;
+    transition: all;
+  }
+  .nav-item .menu-item li:nth-child(2) {
+    width: 100%;
+    height: 10%;
+  }
+  .menu-item {
+    height: 70%;
+  }
+  ol {
+    position: absolute;
+    height: auto;
+    top: 0px;
+    text-align: center;
+    background: none;
+    border-radius: 10%;
+    font-size: 0.8em;
+    transform: scaleY(0);
+    transition: all ease-in 0.4s;
+  }
+  .login-bar {
+    width: 100%;
+    height: 30%;
+  }
+  nav li img {
+    width: 5px;
+    height: 5px;
+  }
+}
